@@ -12,13 +12,6 @@ const ListContainer = styled.div`
   height: 500px;
   overflow-y: scroll;
 `;
-const ListContainer1 = styled.div`
-  background-color: red;
-  color: white;
-  width: 520px;
-  height: 500px;
-  overflow-y: scroll;
-`;
 const ListCard = styled.div`
   background-color: grey;
   color: white;
