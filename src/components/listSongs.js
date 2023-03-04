@@ -70,7 +70,7 @@ function ListSongs() {
   const [isNew, setIsNew] = useState(false);
 
   const saveSong = async () => {
-    Axios.post("https://song-app-backend-api-production.up.railway.app/add-song", {
+    await Axios.post("https://song-app-backend-api-production.up.railway.app/add-song", {
       title,
       artist,
       album,
