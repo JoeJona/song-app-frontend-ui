@@ -105,6 +105,11 @@ function ListSongs() {
         album,
         gener,
     }).then(() => {dispatch(getSongs())});
+    setTitle('');
+    setArtist('');
+    setAlbum('');
+    setGener('');
+    setIsNew(false);
   }
 
   const deleteSong = (editedId) => {
