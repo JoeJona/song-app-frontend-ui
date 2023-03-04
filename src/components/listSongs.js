@@ -69,13 +69,13 @@ function ListSongs() {
   const [gener, setGener] = useState("");
   const [isNew, setIsNew] = useState(false);
 
-  const saveSong = () => {
+  const saveSong = async () => {
     Axios.post("https://song-app-backend-api-production.up.railway.app/add-song", {
       title,
       artist,
       album,
       gener,
-    }).then(() => {}).catch(function (error) {
+    }).then().catch(function (error) {
         console.log(error);
       });
     window.location.reload(false);
@@ -85,7 +85,7 @@ function ListSongs() {
     setGener('');
 };
 
-  const edit = (editedId) => {
+  const edit = async (editedId) => {
     Axios.get('https://song-app-backend-api-production.up.railway.app/get-song/'+editedId)
     .then((response)=>{
       setTitle(response.data['title']);
@@ -98,7 +98,7 @@ function ListSongs() {
     });
   };
 
-  const updateSong = () =>{
+  const updateSong = async () =>{
     Axios.put('https://song-app-backend-api-production.up.railway.app/update-song/'+editedId, {
         title,
         artist,
@@ -112,7 +112,7 @@ function ListSongs() {
     setIsNew(false);
   }
 
-  const deleteSong = (editedId) => {
+  const deleteSong = async (editedId) => {
     Axios.delete(`https://song-app-backend-api-production.up.railway.app/delete-song/${editedId}`).then(() => {
       dispatch(getSongs());
     });
